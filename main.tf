@@ -2,31 +2,10 @@ provider "aws" {
   region = "ap-southeast-1" # replace with the desired region
 }
 
-# Retrieve the ID of the Cognito User Pool Client
-data "aws_cognito_user_pool_client" "userpoolclient" {
-  client_id = "5verth6csk863jgouvrfrrnnah"
+resource "aws_cognito_user_pool_user" "example_user" {
   user_pool_id = "ap-southeast-1_mjueEvUGJ"
-}
-
-data "aws_appstream_fleet" "existing_fleet" {
-  name = "cloudlab-windows-fleet"
-  region = "ap-southeast-1"
-}
-
-# Create a Cognito user
-resource "aws_cognito_user" "cognito_user" {
-  username = var.username
-  user_pool_id = data.aws_cognito_user_pool_client.userpoolclient.user_pool_id
+  username     = var.username
+  message_action = "SUPPRESS"
+  # set permanent password for user
   password = var.password
-}
-
-# Authenticate the user and retrieve the AppStream URL
-resource "aws_cognito_user_pools_auth" "cognito_auth" {
-  client_id = data.aws_cognito_user_pool_client.userpoolclient.id
-  user_pool_id = data.aws_cognito_user_pool_client.userpoolclient.user_pool_id
-  auth_flow = "USER_PASSWORD_AUTH"
-  auth_parameters {
-    username = var.username
-    password = var.password
-  }
 }
