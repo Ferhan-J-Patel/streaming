@@ -18,5 +18,5 @@ provider "aws" {
 #   value = "https://appstream2.ap-southeast-1.aws.amazon.com/?{\"action\":\"launch\",\"arn\":\"${aws_appstream_stack.my_stack.arn}\"}"
 # }
 resource "aws_appstream_stack" "test" {
-  name = "STACK NAME"
+  name = "cloudlab-windows-stack"
 }
