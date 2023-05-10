@@ -9,9 +9,8 @@ resource "aws_cognito_user_pool_client" "userpoolclient" {
   name = "admin"
 }
 
-data "aws_appstream_stack_fleet_association" "existing_association" {
-  stack_name = "cloudlab_windows_stack"
-  fleet_name = "cloudlab_windows_fleet"
+data "aws_appstream_fleet" "existing_fleet" {
+  name = "cloudlab-windows-fleet"
 }
 
 # Create a Cognito user
