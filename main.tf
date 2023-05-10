@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 # Retrieve the ID of the Cognito User Pool Client
-resource "aws_cognito_user_pool_client" "userpoolclient" {
+data "aws_cognito_user_pool_client" "userpoolclient" {
 #   client_id = "5verth6csk863jgouvrfrrnnah"
   user_pool_id = "ap-southeast-1_mjueEvUGJ"
   name = "admin"
