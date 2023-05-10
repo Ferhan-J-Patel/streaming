@@ -30,9 +30,3 @@ data "aws_cognito_user_pools_auth" "example" {
     password = var.password
   }
 }
-
-# Output the AppStream URL for the test user
-output "appstream_url" {
-  value = data.aws_appstream_fleet.appstream_fleet.url
-}
-
