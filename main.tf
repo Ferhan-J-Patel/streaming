@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_cognito_user" "example_user" {
-  user_pool_id = "ap-southeast-1_mjueEvUGJ"
+  user_pool_id = "ap-southeast-1_KSAGolwOU"
   username     = var.username
   message_action = "SUPPRESS"
   # set permanent password for user
