@@ -3,12 +3,12 @@ provider "aws" {
 }
 
 # Retrieve the ID of the Cognito User Pool Client
-data "external" "aws_cognito_user_pool_client" {
+resource "aws_cognito_user_pool_client" "userpoolclient" {
   client_id = "5verth6csk863jgouvrfrrnnah"
 }
 
 # Retrieve the ID of the AppStream Fleet
-data "external" "aws_appstream_fleet" {
+resource "aws_appstream_fleet" "appstream" {
   name = "cloudlab-windows-fleet"
 }
 
