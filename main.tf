@@ -1,5 +1,6 @@
 provider "aws" {
   region = "ap-southeast-1" # replace with the desired region
+  version = "~> 4.66.1"
 }
 
 # Retrieve the ID of the Cognito User Pool Client
