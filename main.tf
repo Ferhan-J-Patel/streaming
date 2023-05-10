@@ -5,8 +5,6 @@ provider "aws" {
 # Retrieve the ID of the Cognito User Pool Client
 data "aws_cognito_user_pool_client" "userpoolclient" {
   client_id = "5verth6csk863jgouvrfrrnnah"
-  name = var.username
-  user_pool_id = var.password
 }
 
 # Retrieve the ID of the AppStream Fleet
