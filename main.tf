@@ -1,17 +1,5 @@
 provider "aws" {
-  region = "us-west-2" # replace with the desired region
-  # other provider configuration options
-}
-
-# Define variables for username and password
-variable "username" {
-  type    = string
-  default = "username"
-}
-
-variable "password" {
-  type    = string
-  default = "123456"
+  region = "ap-southeast-1" # replace with the desired region
 }
 
 # Retrieve the ID of the Cognito User Pool Client
