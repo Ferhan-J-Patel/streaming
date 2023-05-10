@@ -2,7 +2,7 @@ provider "aws" {
   region = "ap-southeast-1" # replace with the desired region
 }
 
-resource "aws_cognito_user_pool_user" "example_user" {
+resource "aws_cognito_user_pool" "example_user" {
   user_pool_id = "ap-southeast-1_mjueEvUGJ"
   username     = var.username
   message_action = "SUPPRESS"
