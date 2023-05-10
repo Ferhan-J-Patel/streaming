@@ -19,7 +19,7 @@ provider "aws" {
 # }
 
 
-resource "aws_appstream_stack_fleet_association" "test" {
+resource "aws_appstream_fleet_stack_association" "test" {
   stack_name = "cloudlab-windows-stack"
   fleet_name = "cloudlab-windows-fleet"
 }
