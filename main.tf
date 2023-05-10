@@ -3,12 +3,12 @@ provider "aws" {
 }
 
 # Retrieve the ID of the Cognito User Pool Client
-data "aws_cognito_user_pool_client" "userpoolclient" {
+data "external" "aws_cognito_user_pool_client" {
   client_id = "5verth6csk863jgouvrfrrnnah"
 }
 
 # Retrieve the ID of the AppStream Fleet
-data "aws_appstream_fleet" "appstream_fleet" {
+data "external" "aws_appstream_fleet" {
   name = "cloudlab-windows-fleet"
 }
 
@@ -20,7 +20,7 @@ resource "aws_cognito_user" "cognito_user" {
 }
 
 # Authenticate the user and retrieve the AppStream URL
-data "aws_cognito_user_pools_auth" "example" {
+data "external" "aws_cognito_user_pools_auth" {
   client_id = data.aws_cognito_user_pool_client.userpoolclient.id
   user_pool_id = data.aws_cognito_user_pool_client.userpoolclient.user_pool_id
   auth_flow = "USER_PASSWORD_AUTH"
