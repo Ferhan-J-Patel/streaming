@@ -1,6 +1,5 @@
 provider "aws" {
   region = "ap-southeast-1" # replace with the desired region
-  version = "~> 4.66.1"
 }
 
 # Retrieve the ID of the Cognito User Pool Client
@@ -11,6 +10,7 @@ data "aws_cognito_user_pool_client" "userpoolclient" {
 
 data "aws_appstream_fleet" "existing_fleet" {
   name = "cloudlab-windows-fleet"
+  region = "ap-southeast-1"
 }
 
 # Create a Cognito user
