@@ -20,7 +20,7 @@ resource "aws_cognito_user" "cognito_user" {
 }
 
 # Authenticate the user and retrieve the AppStream URL
-data "external" "aws_cognito_user_pools_auth" {
+resource "aws_cognito_user_pools_auth" "cognito_auth" {
   client_id = data.aws_cognito_user_pool_client.userpoolclient.id
   user_pool_id = data.aws_cognito_user_pool_client.userpoolclient.user_pool_id
   auth_flow = "USER_PASSWORD_AUTH"
