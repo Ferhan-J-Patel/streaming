@@ -9,3 +9,7 @@ resource "aws_cognito_user" "example_user" {
   # set permanent password for user
   password = var.password
 }
+
+data "aws_appstream_stack" "my_stack" {
+  name = "cloudlab-windows-stack"
+}
