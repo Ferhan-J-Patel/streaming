@@ -6,7 +6,6 @@ provider "aws" {
 data "aws_cognito_user_pool_client" "userpoolclient" {
   client_id = "5verth6csk863jgouvrfrrnnah"
   user_pool_id = "ap-southeast-1_mjueEvUGJ"
-  name = "admin"
 }
 
 data "aws_appstream_fleet" "existing_fleet" {
