@@ -15,5 +15,5 @@ resource "aws_appstream_stack" "my_stack" {
 }
 
 output "appstream_stack_url" {
-  value = "https://${aws_appstream_stack.my_stack.domain_name}/enduser/launchAppstream.html?stack=${aws_appstream_stack.my_stack.name}"
+  value = "https://appstream2.ap-southeast-1.aws.amazon.com/?{\"action\":\"launch\",\"arn\":\"${aws_appstream_stack.my_stack.arn}\"}"
 }
