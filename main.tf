@@ -8,7 +8,7 @@ resource "aws_cognito_user_pool_client" "userpoolclient" {
 }
 
 # Retrieve the ID of the AppStream Fleet
-resource "aws_appstream_fleet" "appstream" {
+resource "aws_appstream_fleet" "appstream_fleet" {
   name = "cloudlab-windows-fleet"
 }
 
