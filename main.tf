@@ -10,7 +10,7 @@ provider "aws" {
 #   password = var.password
 # }
 
-data "aws_appstream_stack" "my_stack" {
+resource "aws_appstream_stack" "my_stack" {
   name = "cloudlab-windows-stack"
 }
 
